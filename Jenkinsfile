@@ -4,7 +4,7 @@ node {
     }
 
     stage('Test') {
-        docker.image('golang:1.22-alpine').inside {
+        docker.image('golang:1.25-alpine').inside {
             sh '''
                 go version
                 go test ./... -v
@@ -13,7 +13,7 @@ node {
     }
 
     stage('Build') {
-        docker.image('golang:1.22-alpine').inside {
+        docker.image('golang:1.25-alpine').inside {
             sh '''
                 go build -o intersection-app
             '''
