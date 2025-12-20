@@ -7,3 +7,8 @@ go test ./intersection -run TestFindIntersection -v
 ```bash
 go run main.go
 ```
+
+3. install dependency
+```bash
+go mod tidy
+```
