@@ -16,7 +16,7 @@ node {
                 export GOPATH=/tmp/go
 
                 go version
-                go test ./... -v
+                go test ./... -v -json > test-report.json
             '''
         }
     }
