@@ -8,21 +8,12 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		result := intersection.FindIntersection([]string{
-			"1,3,4,7,13",
-			"1,2,4,4,13,15",
-		})
-
-		fmt.Fprintf(
-			w,
-			"hasil intersection antara [1,3,4,7,13] dan [1,2,4,13,15] adalah: %s\n",
-			result,
+		result := intersection.FindIntersection(
+			[]string{"1,3,4,7,13", "1,2,4,13,15"},
 		)
+		fmt.Fprintf(w, "Hasil intersection: %s\n", result)
 	})
 
-	fmt.Println("server running on :3232")
-	err := http.ListenAndServe(":3232", nil)
-	if err != nil {
-		panic(err)
-	}
+	fmt.Println("Server running on :3232")
+	http.ListenAndServe(":3232", nil)
 }
