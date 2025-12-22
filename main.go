@@ -15,5 +15,8 @@ func main() {
 	})
 
 	fmt.Println("Server running on :3232")
-	http.ListenAndServe(":3232", nil)
+	err := http.ListenAndServe(":3232", nil)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
