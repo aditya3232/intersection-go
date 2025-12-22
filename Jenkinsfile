@@ -43,7 +43,7 @@ node {
 
             docker run -d \
               --name intersection-app \
-              -p 8080:8080 \
+              -p 3232:3232 \
               intersection-app:latest
         '''
     }
