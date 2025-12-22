@@ -32,20 +32,4 @@ node {
         }
     }
 
-    stage('Deploy') {
-        sh '''
-            docker version
-
-            docker build -t intersection-app:latest .
-
-            docker stop intersection-app || true
-            docker rm intersection-app || true
-
-            docker run -d \
-              --name intersection-app \
-              -p 3232:3232 \
-              intersection-app:latest
-        '''
-    }
-
 }
