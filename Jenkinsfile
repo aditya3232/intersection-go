@@ -32,4 +32,15 @@ node {
         }
     }
 
+    stage('Manual Approval') {
+        input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed'
+    }
+
+    stage('Deploy') {
+        echo 'Aplikasi berhasil di-deploy'
+        echo 'Menjeda pipeline selama 1 menit agar aplikasi dapat digunakan'
+        sleep time: 1, unit: 'MINUTES'
+        echo '1 menit selesai, pipeline sukses'
+    }
+
 }
