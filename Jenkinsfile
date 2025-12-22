@@ -38,9 +38,13 @@ node {
 
     stage('Deploy') {
         echo 'Aplikasi berhasil di-deploy'
-        echo 'Menjeda pipeline selama 1 menit agar aplikasi dapat digunakan'
+        echo 'Akses aplikasi di: https://intersection-go.onrender.com/'
+
+        echo 'Pipeline dijeda selama 1 menit agar aplikasi dapat digunakan'
         sleep time: 1, unit: 'MINUTES'
-        echo '1 menit selesai, pipeline sukses'
+
+        echo 'Waktu akses selesai'
+        echo 'Link aplikasi ditutup: https://intersection-go.onrender.com/'
     }
 
 }
